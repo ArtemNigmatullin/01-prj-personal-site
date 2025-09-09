@@ -1,1 +1,166 @@
-/* Add you CSS here */
+/* LinkedIn-inspired UI
+   Accent: #0A66C2 (blue)
+   Feed-like light background: #F3F2EF
+*/
+:root{
+  --ln-blue: #0A66C2;
+  --ln-blue-dark: #004182;
+  --bg: #F3F2EF;
+  --card: #FFFFFF;
+  --ink: #1F2328;
+  --muted: #5E6B74;
+  --line: #E0E3E7;
+  --shadow: 0 2px 10px rgba(0,0,0,.06);
+  --radius: 12px;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body{
+  margin:0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Source Sans 3", system-ui, -apple-system, "Segoe UI",
+               Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji",
+               "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
+  line-height: 1.5;
+}
+
+/* Layout helpers */
+.container{
+  width: min(1100px, 92vw);
+  margin: 0 auto;
+}
+.section{ padding: 32px 0 16px; }
+
+.card{
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 20px;
+}
+
+/* Top bar */
+.topbar{
+  position: sticky; top:0; z-index: 10;
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+}
+.topbar .container{
+  display: flex; align-items: center; gap: 16px;
+  padding: 10px 0;
+}
+.brand{
+  width: 36px; height: 36px; border-radius: 8px;
+  display: grid; place-items: center;
+  background: var(--ln-blue);
+  color: #fff; font-weight: 700;
+  letter-spacing: .5px;
+}
+.nav{ margin-left: 6px; display: flex; gap: 14px; }
+.nav a{
+  text-decoration: none; color: #38434F;
+  font-weight: 600; padding: 6px 8px; border-radius: 6px;
+}
+.nav a:hover{ background: #E9E5DF; }
+
+.btn-outline{
+  margin-left: auto;
+  padding: 8px 14px;
+  border: 1px solid var(--ln-blue);
+  color: var(--ln-blue);
+  text-decoration: none;
+  border-radius: 999px;
+  font-weight: 700;
+}
+.btn-outline:hover{ background: rgba(10,102,194,.08); }
+
+/* HERO */
+.hero{ padding: 28px 0; }
+.hero-grid{
+  display: grid;
+  grid-template-columns: 112px 1fr;
+  gap: 18px;
+  align-items: start;
+  background:
+    radial-gradient(1200px 300px at 0% -10%, rgba(10,102,194,.10), transparent 70%),
+    var(--card);
+}
+.avatar-wrap{ grid-row: 1 / span 2; }
+.avatar{
+  width: 112px; height: 112px; object-fit: cover;
+  border-radius: 16px; border: 2px solid #fff;
+  box-shadow: var(--shadow);
+}
+.intro h1{ margin: 0 0 2px; font-size: clamp(24px, 4vw, 34px); line-height: 1.15; }
+.subtitle{ margin: 0 0 8px; color: #38434F; font-weight: 600; }
+.summary{ margin: 8px 0 14px; color: var(--muted); max-width: 60ch; }
+
+.cta{ display: flex; gap: 10px; flex-wrap: wrap; }
+.btn-primary,
+.btn-ghost{
+  display: inline-block; border-radius: 999px; font-weight: 700;
+  padding: 10px 16px; text-decoration: none;
+}
+.btn-primary{
+  background: var(--ln-blue); color: #fff;
+  box-shadow: 0 1px 0 rgba(0,0,0,.06);
+}
+.btn-primary:hover{ background: var(--ln-blue-dark); }
+.btn-ghost{
+  border: 1px solid var(--line); color: #38434F; background: #fff;
+}
+.btn-ghost:hover{ background: #F6F6F6; }
+
+.meta{
+  list-style: none; margin: 0; padding: 0;
+  display: grid; gap: 8px;
+}
+.meta li{
+  display: grid; grid-template-columns: 110px 1fr; gap: 10px;
+  font-size: 15px; color: #38434F;
+}
+.meta .k{ color: #667085; }
+.meta .v{ color: #28323B; font-weight: 600; }
+
+/* BIO */
+.bio-highlights{
+  margin-top: 14px; display: flex; flex-wrap: wrap; gap: 8px;
+}
+.tag{
+  background: #DCE6F1; color: #004182;
+  border: 1px solid #CCD6E0;
+  padding: 6px 10px; border-radius: 999px; font-weight: 700; font-size: 14px;
+}
+
+/* SKILLS */
+.grid-3{
+  display: grid; gap: 16px;
+  grid-template-columns: repeat(3, 1fr);
+}
+.card h3{ margin-top: 2px; }
+.list{ margin: 10px 0 0 0; padding-left: 18px; }
+.list li{ margin: 6px 0; }
+
+/* Footer */
+.footer{
+  border-top: 1px solid var(--line);
+  background: #fff; margin-top: 24px;
+}
+.footer-flex{
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 0;
+}
+.footer .links{ margin-left: auto; display: flex; gap: 14px; }
+.footer a{ color: var(--ln-blue); text-decoration: none; font-weight: 700; }
+.footer a:hover{ text-decoration: underline; }
+
+/* Responsive */
+@media (max-width: 780px){
+  .grid-3{ grid-template-columns: 1fr; }
+  .hero-grid{ grid-template-columns: 84px 1fr; }
+  .avatar{ width:84px; height:84px; border-radius: 12px; }
+  .meta li{ grid-template-columns: 90px 1fr; }
+}
+

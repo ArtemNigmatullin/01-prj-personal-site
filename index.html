@@ -1,11 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>My Personal Site</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Artem Nigmatullin — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="One-page portfolio: hero, bio, skills — LinkedIn-inspired UI." />
 </head>
 <body>
-  <!-- Add your HTML content here -->
+  <!-- Top bar -->
+  <header class="topbar">
+    <div class="container">
+      <div class="brand">AN</div>
+      <nav class="nav">
+        <a href="#hero">Home</a>
+        <a href="#bio">Bio</a>
+        <a href="#skills">Skills</a>
+      </nav>
+      <a class="btn-outline" href="mailto:artem@example.com">Contact</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="hero" class="hero">
+      <div class="container hero-grid card">
+        <div class="avatar-wrap">
+          <img class="avatar" src="https://i.postimg.cc/022wvXRb/1111.jpg" alt="Artem's avatar">
+        </div>
+        <div class="intro">
+          <h1>Artem Nigmatullin</h1>
+          <p class="subtitle">
+            IT @ ASU • Aspiring Back-End (Python) &amp; Cybersecurity Analyst
+          </p>
+          <p class="summary">
+            I build reliable back-end services in Python and strengthen my security fundamentals
+            (Google Cybersecurity &rarr; CompTIA Security+). Clean code, clear architectures,
+            and practical security are my priorities.
+          </p>
+          <div class="cta">
+            <a class="btn-primary" href="#skills">View Skills</a>
+            <a class="btn-ghost" href="#bio">About Me</a>
+          </div>
+        </div>
+        <ul class="meta">
+          <li><span class="k">Location</span><span class="v">Amsterdam • NYC (relocation-ready)</span></li>
+          <li><span class="k">Focus</span><span class="v">Python, APIs, Linux, Networks, SIEM, SOC</span></li>
+          <li><span class="k">Learning</span><span class="v">ASU • Google Cybersecurity • Security+</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- BIO -->
+    <section id="bio" class="section">
+      <div class="container">
+        <div class="card">
+          <h2>Bio</h2>
+          <p>
+            I am a disciplined builder focused on back-end development (Python, FastAPI, PostgreSQL)
+            and hands-on security fundamentals (logging, basic SIEM use cases, incident response, and
+            networking). I study at Arizona State University (BS in IT), contribute to practical projects,
+            and prepare for <em>CompTIA Security+</em>.
+          </p>
+          <p>
+            I value a clean, scannable UI — that’s why this page echoes the LinkedIn look:
+            light background, card layout, balanced typography, and a strong action blue.
+          </p>
+          <div class="bio-highlights">
+            <div class="tag">Python</div>
+            <div class="tag">FastAPI</div>
+            <div class="tag">PostgreSQL</div>
+            <div class="tag">Git/GitHub</div>
+            <div class="tag">Linux</div>
+            <div class="tag">Networking</div>
+            <div class="tag">SIEM / SOC</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section">
+      <div class="container grid-3">
+        <div class="card">
+          <h3>Back-End (Python)</h3>
+          <ul class="list">
+            <li>FastAPI, Flask, REST / JSON</li>
+            <li>SQLAlchemy, PostgreSQL, Redis</li>
+            <li>Testing (pytest), typing</li>
+            <li>CI/CD (GitHub Actions), Docker (basics)</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Cybersecurity</h3>
+          <ul class="list">
+            <li>SOC basics, incident response</li>
+            <li>Logs, simple correlations, SIEM (demo projects)</li>
+            <li>Networking: TCP/IP, VPN, VLAN, NAT</li>
+            <li>Track: Google Cybersecurity → Security+</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Tools &amp; Soft Skills</h3>
+          <ul class="list">
+            <li>Git, Linux CLI, Docker</li>
+            <li>Diagrams: ER/EER, draw.io</li>
+            <li>Clear communication, ownership</li>
+            <li>English B2–C1 (interview-ready)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-flex">
+      <span>© 2025 Artem Nigmatullin</span>
+      <div class="links">
+        <a href="mailto:artem@example.com">Email</a>
+        <a href="https://www.linkedin.com/in/artemqa" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="#hero">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
